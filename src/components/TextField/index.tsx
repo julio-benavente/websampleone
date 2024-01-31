@@ -24,12 +24,6 @@ const TextField = ({
   InputProps,
   ...props
 }: TextFieldProps) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
-
-  const isError = Boolean(errors[name]);
   return (
     <MuiTextField
       className={className}
@@ -38,17 +32,17 @@ const TextField = ({
           root: cn("group bg-white rounded-md"),
           input: cn("h-12 py-2 box-border"),
           notchedOutline: cn(
-            "border-2 border-secondary-texture",
-            "group-focus-within:ring-input group-focus-within:border-primary",
-            isError &&
-              "border-red-500 focus:border-red-500 group-focus-within:ring-4 group-focus-within:ring-red-500/50"
+            "border-2 border-primary-400",
+            "group-focus-within:ring-input group-focus-within:border-primary"
+          ),
+          error: cn(
+            "border-red-500 focus:border-red-500 group-focus-within:ring-4 group-focus-within:ring-red-500/50"
           ),
           ...InputProps?.classes,
         },
         ...InputProps,
       }}
       {...props}
-      {...register(name, { ...registerOptions })}
     />
   );
 };

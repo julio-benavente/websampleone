@@ -7,7 +7,7 @@ import cn from "@/helpers/cn";
 
 const CallToAction = () => {
   return (
-    <section className="container py-0">
+    <section className="container pt-0">
       <div className="relative w-full rounded-lg">
         <div>
           <div className="absolute w-full h-full object-cover object-center z-0 rounded-lg bg-purple-950"></div>

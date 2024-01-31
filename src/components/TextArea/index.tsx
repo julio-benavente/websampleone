@@ -10,36 +10,22 @@ import {
   UseFormStateProps,
 } from "react-hook-form";
 
-interface TextFieldProps extends BaseTextFieldProps {
-  name: string;
-  registerOptions?: RegisterOptions;
-}
+interface TextFieldProps extends BaseTextFieldProps {}
 
-const TextField = ({
-  classes,
-  name,
-  registerOptions,
-  ...props
-}: TextFieldProps) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
-
-  const isError = Boolean(errors[name]);
-
+const TextField = ({ classes, name, ...props }: TextFieldProps) => {
   return (
     <MuiTextField
       InputProps={{
         classes: {
           root: cn("group bg-white p-0"),
           input: cn("py-2 px-4 box-border h-auto"),
-          focused: cn("border-emerald-300/80"),
+          // focused: cn("border-emerald-300/80"),
           notchedOutline: cn(
-            "border-2 border-emerald-300",
-            "group-focus-within:ring-input group-focus-within:border-primary",
-            isError &&
-              "border-red-500 focus:border-red-500 group-focus-within:ring-4 group-focus-within:ring-red-500/50"
+            "border-2 border-primary-400",
+            "group-focus-within:ring-input group-focus-within:border-primary"
+          ),
+          error: cn(
+            "border-red-500 focus:border-red-500 group-focus-within:ring-4 group-focus-within:ring-red-500/50"
           ),
           ...classes,
         },
@@ -47,7 +33,6 @@ const TextField = ({
       multiline
       rows={4}
       {...props}
-      {...register(name, { ...registerOptions })}
     />
   );
 };
