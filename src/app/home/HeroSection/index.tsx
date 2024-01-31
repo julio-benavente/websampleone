@@ -7,27 +7,58 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import cn from "@/helpers/cn";
 import InfiniteLooper from "./InfiniteLooper";
+import { motion, Variants } from "framer-motion";
+
+const MotionTypography = motion(Typography);
+
+const headlineSectionVariants: Variants = {
+  visible: {
+    opacity: 1.4,
+    y: 0,
+
+    transition: {
+      duration: 1,
+      staggerChildren: 0.4,
+      ease: "easeInOut",
+    },
+  },
+  hidden: {
+    y: -10,
+    opacity: 0,
+  },
+};
 
 const HeroSection = () => {
   return (
     <div className={cn("container", "lg:grid lg:grid-cols-2 lg:gap-x-12")}>
-      <div className={cn("max-w-xl", "lg:mt-40")}>
-        <Typography variant="h1" className="mb-4 font-black">
+      <motion.div
+        className={cn("max-w-xl", "lg:mt-40")}
+        initial="hidden"
+        animate="visible"
+        variants={headlineSectionVariants}
+      >
+        <MotionTypography
+          variant="h1"
+          className="mb-4 font-black"
+          variants={headlineSectionVariants}
+        >
           Lorem ipsum dolor, sit amet consectetur adipisicing.
-        </Typography>
-
-        <Typography variant="body1" className="mb-8">
+        </MotionTypography>
+        <MotionTypography
+          variant="body1"
+          className="mb-8"
+          variants={headlineSectionVariants}
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsum
           sint consequatur dolore voluptatibus sunt corporis provident aperiam,
           veritatis ab in maiores, iusto labore quae ad tenetur, eum ex
           eligendi!
-        </Typography>
-
-        <div className="flex gap-x-4">
+        </MotionTypography>
+        <motion.div className="flex gap-x-4" variants={headlineSectionVariants}>
           <Button>Button One</Button>
           <Button color="secondary">Button Two</Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       <ImagesAnimated />
     </div>
