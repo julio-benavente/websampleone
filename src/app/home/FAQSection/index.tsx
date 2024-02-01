@@ -1,38 +1,70 @@
-import { Accordion, Button, Link, Typography } from "@/components";
-import React from "react";
+"use client";
+
+import { Accordion, Button, Typography } from "@/components";
+import { motion } from "framer-motion";
+import {
+  createShowWhileInViewAnimation,
+  createShowWithStaggerChildren,
+} from "@/helpers/animations";
+import accordionItems from "./accordionItems";
+
+const MotionAccordion = motion(Accordion);
+const showWhileInViewAnimation = createShowWhileInViewAnimation();
+const showWithStaggerChildren = createShowWithStaggerChildren();
 
 const FAQSection = () => {
   return (
     <section className="container">
-      <div className="max-w-xl">
+      <motion.div className="max-w-xl" {...showWhileInViewAnimation}>
         <Typography variant="h2">FAQs</Typography>
         <Typography className="mt-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
           repellat? Odio in non quidem officiis alias! Quisquam unde dolore
           explicabo.
         </Typography>
-      </div>
+      </motion.div>
 
-      <div className="mt-8 grid gap-4 lg:hidden">
-        <Accordion items={accordionItems} />
-      </div>
+      <motion.div
+        className="mt-8 grid gap-4 lg:hidden"
+        {...showWithStaggerChildren}
+      >
+        {accordionItems.length > 0 &&
+          accordionItems.map((item) => (
+            <MotionAccordion
+              key={item.id}
+              {...item}
+              variants={showWithStaggerChildren.variants}
+            />
+          ))}
+      </motion.div>
       <div className="hidden grid-cols-2 items-start gap-4 lg:grid lg:gap-8">
-        <div className="mt-8 grid gap-4 ">
-          <Accordion
-            items={accordionItems.slice(
-              0,
-              Math.floor(accordionItems.length / 2)
-            )}
-          />
-        </div>
-        <div className="mt-8 grid gap-4 ">
-          <Accordion
-            items={accordionItems.slice(Math.floor(accordionItems.length / 2))}
-          />
-        </div>
+        <motion.div className="mt-8 grid gap-4 " {...showWithStaggerChildren}>
+          {accordionItems.length > 0 &&
+            accordionItems
+              .slice(0, Math.floor(accordionItems.length / 2))
+              .map((item) => (
+                <MotionAccordion
+                  key={item.id}
+                  {...item}
+                  variants={showWithStaggerChildren.variants}
+                />
+              ))}
+        </motion.div>
+        <motion.div className="mt-8 grid gap-4 " {...showWithStaggerChildren}>
+          {accordionItems.length > 0 &&
+            accordionItems
+              .slice(Math.floor(accordionItems.length / 2))
+              .map((item) => (
+                <MotionAccordion
+                  key={item.id}
+                  {...item}
+                  variants={showWithStaggerChildren.variants}
+                />
+              ))}
+        </motion.div>
       </div>
 
-      <div className="mt-12">
+      <motion.div className="mt-12" {...showWhileInViewAnimation}>
         <Typography variant="h3" className="text-center">
           Still questions?
         </Typography>
@@ -43,134 +75,9 @@ const FAQSection = () => {
         <div className="m-auto w-fit">
           <Button className="mx-auto mt-4">Contact us</Button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
 
 export default FAQSection;
-
-const accordionItems = [
-  {
-    id: "1",
-    question: "Who can become an The Good Doctor patient?",
-    answer: (
-      <>
-        Our doctors specialize caring for anyone with Medicare, including
-        Original Medicare Part B, select Medicare Advantage plans, Medicare
-        Supplement or{" "}
-        <Link href="/" className="link">
-          Medigap plans and Medicare-Medicaid
-        </Link>{" "}
-        Plans.
-      </>
-    ),
-  },
-  {
-    id: "2",
-    question: "Who can become an The Good Doctor patient?",
-    answer: (
-      <>
-        Our doctors specialize caring for anyone with Medicare, including
-        Original Medicare Part B, select Medicare Advantage plans, Medicare
-        Supplement or{" "}
-        <Link href="/" className="link">
-          Medigap plans and Medicare-Medicaid
-        </Link>{" "}
-        Plans.
-      </>
-    ),
-  },
-  {
-    id: "3",
-    question: "Who can become an The Good Doctor patient?",
-    answer: (
-      <>
-        Our doctors specialize caring for anyone with Medicare, including
-        Original Medicare Part B, select Medicare Advantage plans, Medicare
-        Supplement or{" "}
-        <Link href="/" className="link">
-          Medigap plans and Medicare-Medicaid
-        </Link>{" "}
-        Plans.
-      </>
-    ),
-  },
-  {
-    id: "4",
-    question: "Who can become an The Good Doctor patient?",
-    answer: (
-      <>
-        Our doctors specialize caring for anyone with Medicare, including
-        Original Medicare Part B, select Medicare Advantage plans, Medicare
-        Supplement or{" "}
-        <Link href="/" className="link">
-          Medigap plans and Medicare-Medicaid
-        </Link>{" "}
-        Plans.
-      </>
-    ),
-  },
-
-  {
-    id: "5",
-    question: "Who can become an The Good Doctor patient?",
-    answer: (
-      <>
-        Our doctors specialize caring for anyone with Medicare, including
-        Original Medicare Part B, select Medicare Advantage plans, Medicare
-        Supplement or{" "}
-        <Link href="/" className="link">
-          Medigap plans and Medicare-Medicaid
-        </Link>{" "}
-        Plans.
-      </>
-    ),
-  },
-  {
-    id: "6",
-    question: "Who can become an The Good Doctor patient?",
-    answer: (
-      <>
-        Our doctors specialize caring for anyone with Medicare, including
-        Original Medicare Part B, select Medicare Advantage plans, Medicare
-        Supplement or{" "}
-        <Link href="/" className="link">
-          Medigap plans and Medicare-Medicaid
-        </Link>{" "}
-        Plans.
-      </>
-    ),
-  },
-
-  {
-    id: "7",
-    question: "Who can become an The Good Doctor patient?",
-    answer: (
-      <>
-        Our doctors specialize caring for anyone with Medicare, including
-        Original Medicare Part B, select Medicare Advantage plans, Medicare
-        Supplement or{" "}
-        <Link href="/" className="link">
-          Medigap plans and Medicare-Medicaid
-        </Link>{" "}
-        Plans.
-      </>
-    ),
-  },
-  {
-    id: "8",
-    question: "Who can become an The Good Doctor patient?",
-    answer: (
-      <>
-        Our doctors specialize caring for anyone with Medicare, including
-        Original Medicare Part B, select Medicare Advantage plans, Medicare
-        Supplement or{" "}
-        <Link href="/" className="link">
-          Medigap plans and Medicare-Medicaid
-        </Link>{" "}
-        Plans.
-      </>
-    ),
-  },
-];
