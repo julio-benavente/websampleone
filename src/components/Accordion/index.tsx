@@ -8,42 +8,40 @@ import {
   AccordionSummaryProps,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode, forwardRef } from "react";
 
-interface AccordionProps extends Omit<MuiAccordionProps, "children"> {
-  items: {
-    id: string;
-    question: any;
-    answer: any;
-  }[];
+interface AccordionProps {
+  id: string;
+  question: any;
+  answer: any;
+  accordionProps?: Omit<MuiAccordionProps, "children">;
 }
 
-const Accordion = ({ items }: AccordionProps) => {
-  return (
-    <>
-      {items &&
-        items.map((item, i) => {
-          return (
-            <MUIAccordion
-              key={i}
-              classes={{
-                root: cn(
-                  "border border-black rounded-none shadow-none outline-none rounded h-fit m-0 after:hidden before:hidden max-h-fit shadow-md"
-                ),
-                expanded: cn("max-h-fit"),
-              }}
-              //   {...props}
-            >
-              <AccordionSummary aria-controls={item.id} id={item.id}>
-                {item.question}
-              </AccordionSummary>
-              <AccordionDetails>{item.answer}</AccordionDetails>
-            </MUIAccordion>
-          );
-        })}
-    </>
-  );
-};
+const Accordion = forwardRef(
+  (
+    { accordionProps, id, question, answer, ...props }: AccordionProps,
+    ref: any
+  ) => {
+    return (
+      <MUIAccordion
+        ref={ref}
+        classes={{
+          root: cn(
+            "border border-black rounded-none shadow-none outline-none rounded h-fit m-0 after:hidden before:hidden max-h-fit shadow-md"
+          ),
+          expanded: cn("max-h-fit"),
+        }}
+        {...props}
+        {...accordionProps}
+      >
+        <AccordionSummary aria-controls={id} id={id}>
+          {question}
+        </AccordionSummary>
+        <AccordionDetails>{answer}</AccordionDetails>
+      </MUIAccordion>
+    );
+  }
+);
 
 const AccordionSummary = ({ className, children }: AccordionSummaryProps) => {
   return (
