@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   InputWrapper,
@@ -8,10 +10,14 @@ import {
 import React from "react";
 import { Mail, Phone, LocationCity } from "@mui/icons-material";
 import { InputLabel } from "@mui/material";
+import { motion } from "framer-motion";
+import { createShowWhileInViewAnimation } from "@/helpers/animations";
+
+const animation = createShowWhileInViewAnimation();
 
 const ContactSection = () => {
   return (
-    <section className="container">
+    <motion.section className="container" {...animation}>
       <div className="grid lg:grid-cols-2 lg:gap-x-20">
         <div className="max-w-xl">
           <Typography variant="h2">Contact us</Typography>
@@ -64,7 +70,7 @@ const ContactSection = () => {
           </div>
         </form>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

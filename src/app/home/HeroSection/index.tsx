@@ -8,53 +8,44 @@ import "slick-carousel/slick/slick-theme.css";
 import cn from "@/helpers/cn";
 import InfiniteLooper from "./InfiniteLooper";
 import { motion, Variants } from "framer-motion";
+import { createShowWithStaggerChildren } from "@/helpers/animations";
 
 const MotionTypography = motion(Typography);
 
-const headlineSectionVariants: Variants = {
-  visible: {
-    opacity: 1.4,
-    y: 0,
-
-    transition: {
-      duration: 1,
-      staggerChildren: 0.4,
-      ease: "easeInOut",
-    },
+const headlinesAnimation = createShowWithStaggerChildren({
+  viewport: {
+    once: false,
   },
-  hidden: {
-    y: -10,
-    opacity: 0,
-  },
-};
+});
 
 const HeroSection = () => {
   return (
     <div className={cn("container", "lg:grid lg:grid-cols-2 lg:gap-x-12")}>
       <motion.div
         className={cn("max-w-xl", "lg:mt-40")}
-        initial="hidden"
-        animate="visible"
-        variants={headlineSectionVariants}
+        {...headlinesAnimation}
       >
         <MotionTypography
           variant="h1"
           className="mb-4 font-black"
-          variants={headlineSectionVariants}
+          variants={headlinesAnimation.variants}
         >
           Lorem ipsum dolor, sit amet consectetur adipisicing.
         </MotionTypography>
         <MotionTypography
           variant="body1"
           className="mb-8"
-          variants={headlineSectionVariants}
+          variants={headlinesAnimation.variants}
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsum
           sint consequatur dolore voluptatibus sunt corporis provident aperiam,
           veritatis ab in maiores, iusto labore quae ad tenetur, eum ex
           eligendi!
         </MotionTypography>
-        <motion.div className="flex gap-x-4" variants={headlineSectionVariants}>
+        <motion.div
+          className="flex gap-x-4"
+          variants={headlinesAnimation.variants}
+        >
           <Button>Button One</Button>
           <Button color="secondary">Button Two</Button>
         </motion.div>
