@@ -33,13 +33,6 @@ const createShowWhileInViewAnimation = (
     viewport = {},
   } = props || {};
 
-  console.log(
-    updateNestedObject(
-      viewportDefaultProps,
-      viewport as DeepPartial<typeof viewportDefaultProps>
-    )
-  );
-
   return {
     initial,
     whileInView,
