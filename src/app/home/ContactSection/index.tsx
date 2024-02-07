@@ -17,7 +17,7 @@ const animation = createShowWhileInViewAnimation();
 
 const ContactSection = () => {
   return (
-    <motion.section className="container" {...animation}>
+    <motion.section className="container" {...animation} id="contact">
       <div className="grid lg:grid-cols-2 lg:gap-x-20">
         <div className="max-w-xl">
           <Typography variant="h2">Contact us</Typography>
@@ -40,9 +40,9 @@ const ContactSection = () => {
                 icon: LocationCity,
                 value: "229 Hodkiewicz Ports, New Jenatown, MI",
               },
-            ].map((e) => {
+            ].map((e, i) => {
               return (
-                <div className="grid grid-cols-[40px_1fr]">
+                <div key={i} className="grid grid-cols-[40px_1fr]">
                   <e.icon className="mt-1" /> <Typography>{e.value}</Typography>
                 </div>
               );
@@ -61,7 +61,7 @@ const ContactSection = () => {
           </InputWrapper>
 
           <InputWrapper>
-            <InputLabel>message</InputLabel>
+            <InputLabel>Message</InputLabel>
             <TextArea name="message" rows={8} />
           </InputWrapper>
 

@@ -14,7 +14,7 @@ const showWithStaggerChildren = createShowWithStaggerChildren();
 
 const FAQSection = () => {
   return (
-    <section className="container">
+    <section className="container" id="faq">
       <motion.div className="max-w-xl" {...showWhileInViewAnimation}>
         <Typography variant="h2">FAQs</Typography>
         <Typography className="mt-4">
@@ -64,12 +64,13 @@ const FAQSection = () => {
         </motion.div>
       </div>
 
-      <motion.div className="mt-12" {...showWhileInViewAnimation}>
+      <motion.div className="mt-12 lg:mt-24" {...showWhileInViewAnimation}>
         <Typography variant="h3" className="text-center">
           Still questions?
         </Typography>
         <Typography className="mt-2 text-center">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Feel free to reach out to us with any additional inquiries or
+          concerns.
         </Typography>
 
         <div className="m-auto w-fit">

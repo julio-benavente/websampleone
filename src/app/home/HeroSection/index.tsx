@@ -2,7 +2,14 @@
 
 import { Button, Typography } from "@/components";
 import AnimationSoftwareImage from "@/../public/assets/images/32164332_animation_software.jpg";
-import Image from "next/image";
+import ImageOne from "@/../public/assets/images/apuesto-joven-electricista-instalando-aire-acondicionado-casa-cliente.jpg";
+import ImageTwo from "@/../public/assets/images/expertos-que-trabajan-aire-acondicionado.jpg";
+import ImageThree from "@/../public/assets/images/hombre-electricista-reparacion-aire-acondicionado-mantenimiento-aire-acondicionado-atras-tecnico-mecanico-herramientas-ingenieria-reparar-potencia-servicios-aire-acondicionado-maquina-verificar-ventilacion-electrica.jpg";
+import ImageFour from "@/../public/assets/images/ingeniero-indio-joven-concentrado-que-instala-acondicionador-aire.jpg";
+import ImageSix from "@/../public/assets/images/manos-tecnico-destornillador-al-instalar-aire-acondicionado-dormitorio-cliente.jpg";
+import ImageSeven from "@/../public/assets/images/tecnico-aire-acondicionado-desarmando-aire-acondicionado-su-inspeccion.jpg";
+import ImageFive from "@/../public/assets/images/tecnico-aire-acondicionado-desarmando-aire-acondicionado-su-inspeccion.jpg";
+import Image, { StaticImageData } from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import cn from "@/helpers/cn";
@@ -20,36 +27,43 @@ const headlinesAnimation = createShowWithStaggerChildren({
 
 const HeroSection = () => {
   return (
-    <div className={cn("container", "lg:grid lg:grid-cols-2 lg:gap-x-12")}>
-      <motion.div
-        className={cn("max-w-xl", "lg:mt-40")}
-        {...headlinesAnimation}
-      >
-        <MotionTypography
-          variant="h1"
-          className="mb-4 font-black"
-          variants={headlinesAnimation.variants}
-        >
-          Lorem ipsum dolor, sit amet consectetur adipisicing.
-        </MotionTypography>
-        <MotionTypography
-          variant="body1"
-          className="mb-8"
-          variants={headlinesAnimation.variants}
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsum
-          sint consequatur dolore voluptatibus sunt corporis provident aperiam,
-          veritatis ab in maiores, iusto labore quae ad tenetur, eum ex
-          eligendi!
-        </MotionTypography>
+    <div
+      className={cn(
+        "min-h-screen container mt-16 lg:container",
+        "lg:grid lg:grid-cols-2 lg:gap-x-12 lg:items-center lg:py-0"
+      )}
+    >
+      <div>
         <motion.div
-          className="flex gap-x-4"
-          variants={headlinesAnimation.variants}
+          className={cn("max-w-xl", "lg:-mt-[10vh]")}
+          {...headlinesAnimation}
         >
-          <Button>Button One</Button>
-          <Button color="secondary">Button Two</Button>
+          <MotionTypography
+            variant="h1"
+            className="mb-4 font-black"
+            variants={headlinesAnimation.variants}
+          >
+            Stay cool all year your with our expert AC service
+          </MotionTypography>
+          <MotionTypography
+            variant="body1"
+            className="mb-8"
+            variants={headlinesAnimation.variants}
+          >
+            Johnson Refrigeration, Inc. is a family-owned business, founded in
+            1977, specializing in the service, design and installation of
+            residential, commercial, and industrial heating and air conditioning
+            systems.
+          </MotionTypography>
+          <motion.div
+            className="flex gap-x-4"
+            variants={headlinesAnimation.variants}
+          >
+            <Button>Button One</Button>
+            <Button color="secondary">Button Two</Button>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
 
       <ImagesAnimated />
     </div>
@@ -63,40 +77,38 @@ interface ImagesRowPros {
 }
 
 const ImagesAnimated = () => {
+  const rowOneImages = [ImageOne, ImageTwo, ImageThree];
+  const rowTwoImages = [ImageFour, ImageFive, ImageSix];
   return (
     <div
       className={cn(
         "grid grid-cols-2 gap-x-4 mt-8 h-[420px]",
         "sm:h-[520px]",
         "md:h-[720px]",
-        "lg:mt-auto lg:grid"
+        "lg:mt-auto lg:grid lg:min-h-screen"
       )}
     >
       <InfiniteLooper variant="drop" duration="40s">
-        <ImagesRow />
+        <ImagesRow images={rowOneImages} />
       </InfiniteLooper>
       <InfiniteLooper variant="drop" direction="reverse" duration="40s">
-        <ImagesRow />
+        <ImagesRow images={rowTwoImages} />
       </InfiniteLooper>
     </div>
   );
 };
 
-const ImagesRow = () => {
-  return Array(4)
-    .fill(null)
-    .map((e, i) => {
-      return (
-        <div className="w-full h-full p-0 m-0 border-none block mb-4" key={i}>
-          <Image
-            key={i}
-            src={AnimationSoftwareImage}
-            alt=""
-            className={cn(
-              "object-cover w-full h-full p-0 m-0 border-none block"
-            )}
-          />
-        </div>
-      );
-    });
+const ImagesRow = (props: { images: Array<string | StaticImageData> }) => {
+  return props.images.map((image, i) => {
+    return (
+      <div className="w-full h-full p-0 m-0 border-none block mb-4" key={i}>
+        <Image
+          key={i}
+          src={image}
+          alt=""
+          className={cn("object-cover w-full h-full p-0 m-0 border-none block")}
+        />
+      </div>
+    );
+  });
 };

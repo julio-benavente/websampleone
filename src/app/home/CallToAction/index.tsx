@@ -4,6 +4,7 @@ import { Button, Typography } from "@/components";
 import React from "react";
 import AnimationSoftwareImage from "@/../public/assets/images/32164332_animation_software.jpg";
 import LawyerLegalAdvisorImage from "@/../public/assets/images/lawyer-legal-advisor.jpg";
+import ACInstallation from "@/../public/assets/images/maintance-service.jpg";
 import Image from "next/image";
 import cn from "@/helpers/cn";
 import { Variants, motion } from "framer-motion";
@@ -29,12 +30,12 @@ const variants: Variants = {
 
 const CallToAction = () => {
   return (
-    <section className="container pt-0">
+    <section className="container">
       <div className="relative w-full rounded-lg">
         <div>
           <div className="absolute w-full h-full object-cover object-center z-0 rounded-lg bg-purple-950"></div>
           <Image
-            src={LawyerLegalAdvisorImage}
+            src={ACInstallation}
             alt=""
             className="absolute w-full h-full object-cover object-center z-0 rounded-lg mix-blend-multiply"
           />
@@ -56,21 +57,23 @@ const CallToAction = () => {
             className="[&]:text-gray-200"
             variants={variants}
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Distinctio, earum?
+            Don't Sweat It - Reach Out to Us Today for Reliable HVAC Solutions
           </MotionTypography>
           <MotionTypography
             variant="body1"
             className="[&]:text-gray-200 mt-4"
             variants={variants}
           >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur
-            eius veritatis ratione reprehenderit numquam quasi quisquam
-            molestias possimus hic officiis?
+            Beat the heat with ease! Our seasoned HVAC team guarantees
+            year-round comfort. From repairs to installations and maintenance,
+            we've got you covered. Say farewell to sweltering summers and chilly
+            winters - contact us now for top-notch HVAC services!
           </MotionTypography>
 
           <motion.div className="mt-8" variants={variants}>
-            <Button>Get more information</Button>
+            <Button size="large" color="secondary">
+              Get more information
+            </Button>
           </motion.div>
         </motion.div>
       </div>

@@ -5,38 +5,60 @@ import {
   LinkedIn as LinkedInIcon,
   Twitter as TwitterIcon,
 } from "@mui/icons-material";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { LegacyRef, forwardRef } from "react";
 
-export const TeamItem = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
-  return (
-    <div ref={ref}>
-      <Image
-        src={LawyerAdvisorImage}
-        alt=""
-        className="rounded w-full aspect-square object-cover lg:aspect-[4/3]"
-      />
+interface Props {
+  name: string;
+  position: string;
+  image: StaticImageData | string;
+  description: string;
+  linkedIn?: string;
+  twitter?: string;
+  mail?: string;
+}
 
-      <Typography className="text-center mt-4">Employee Name</Typography>
-      <Typography variant="body2" className="text-center">
-        Employee Position
-      </Typography>
+export const TeamItem = forwardRef(
+  (props: Props, ref: LegacyRef<HTMLDivElement>) => {
+    return (
+      <div ref={ref}>
+        <Image
+          src={props.image}
+          alt=""
+          className="rounded w-full aspect-square object-cover object-top  lg:aspect-[4/3]"
+        />
 
-      <Typography variant="body2" className="text-center mt-4 max-w-md mx-auto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatibus
-        consectetur iure minus molestias ut quas id impedit veniam corrupti?
-      </Typography>
+        <Typography className="text-center mt-4">{props.name}</Typography>
+        <Typography variant="body2" className="text-center">
+          {props.position}
+        </Typography>
 
-      <div className="mt-4 grid grid-flow-col auto-cols-auto justify-center gap-2">
-        {[LinkedInIcon, TwitterIcon, EmailIcon].map((Icon) => {
-          return (
-            <Link href="https://google.com/" className="group">
-              <Icon className="text-3xl text-gray-700 group-hover:text-gray-500" />
+        <Typography
+          variant="body2"
+          className="text-center mt-4 max-w-md mx-auto"
+        >
+          {props.description}
+        </Typography>
+
+        <div className="mt-4 grid grid-flow-col auto-cols-auto justify-center gap-2">
+          {props.linkedIn && (
+            <Link href={props.linkedIn} className="group">
+              <LinkedInIcon className="text-3xl text-gray-700 group-hover:text-gray-500" />
             </Link>
-          );
-        })}
+          )}
+          {props.twitter && (
+            <Link href={props.twitter} className="group">
+              <TwitterIcon className="text-3xl text-gray-700 group-hover:text-gray-500" />
+            </Link>
+          )}
+          {props.mail && (
+            <Link href={props.mail} className="group">
+              <EmailIcon className="text-3xl text-gray-700 group-hover:text-gray-500" />
+            </Link>
+          )}
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
