@@ -14,15 +14,15 @@ const Typography = forwardRef(
         classes={{
           root: cn("font-primary"),
           h1: cn(
-            "text-4xl lg:text-5xl font-cabinet text-text-headline font-medium"
+            "text-4xl lg:text-5xl font-cabinet text-purple-900 font-black"
           ),
-          h2: cn("text-3xl lg:text-4xl text-text-headline font-medium"),
-          h3: cn("text-2xl lg:text-2xl text-text-headline"),
-          h4: cn("text-xl lg:text-xl font-bold text-text-headline"),
-          h5: cn("text-lg lg:text-lg font-bold text-text-headline"),
-          body1: cn("text-lg text-text"),
-          body2: cn("text-base text-text"),
-          subtitle1: cn("text-lg text-text"),
+          h2: cn("text-3xl lg:text-4xl text-purple-900 font-bold"),
+          h3: cn("text-2xl lg:text-2xl text-purple-900"),
+          h4: cn("text-xl lg:text-xl font-bold text-purple-900"),
+          h5: cn("text-lg lg:text-lg font-bold text-purple-900"),
+          body1: cn("text-lg text-gray-700"),
+          body2: cn("text-base text-gray-700"),
+          subtitle1: cn("text-lg text-gray-700"),
           caption: cn("text-sm leading-snug"),
           ...classes,
         }}

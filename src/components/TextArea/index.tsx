@@ -21,7 +21,7 @@ const TextField = ({ classes, name, ...props }: TextFieldProps) => {
           input: cn("py-2 px-4 box-border h-auto"),
           // focused: cn("border-emerald-300/80"),
           notchedOutline: cn(
-            "border-2 border-primary-400",
+            "border-2 border-gray-400",
             "group-focus-within:ring-input group-focus-within:border-primary"
           ),
           error: cn(

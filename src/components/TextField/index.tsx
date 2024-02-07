@@ -32,7 +32,7 @@ const TextField = ({
           root: cn("group bg-white rounded-md"),
           input: cn("h-12 py-2 box-border"),
           notchedOutline: cn(
-            "border-2 border-primary-400",
+            "border-2 border-gray-400",
             "group-focus-within:ring-input group-focus-within:border-primary"
           ),
           error: cn(
