@@ -8,13 +8,13 @@ import TeamSection from "./home/TeamSection";
 
 export default function Home() {
   return (
-    <main>
+    <main id="home">
       <HeroSection />
       <ServicesSections />
       <CallToAction />
       <FAQSection />
       <TeamSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <ContactSection />
     </main>
   );

@@ -66,12 +66,12 @@ module.exports = {
           DEFAULT: "#e3e3ff",
         },
         primary: {
-          ...colors.purple,
-          DEFAULT: colors.purple[500],
+          ...colors.blue,
+          DEFAULT: colors.blue[500],
         },
         secondary: {
-          DEFAULT: "#d1f2e3",
-          texture: "#a0ebc8",
+          ...colors.yellow,
+          DEFAULT: colors.yellow[500],
         },
         terciary: {
           DEFAULT: "#eff5f6",
