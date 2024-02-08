@@ -26,6 +26,7 @@ jobs:
           port: 22
           script: |
             cd ~julio3542/websampleone.juliobenavente.com/
+            pwd
             git pull origin main
             git status
             npm ci
