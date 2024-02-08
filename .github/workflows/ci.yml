@@ -22,7 +22,7 @@ jobs:
         with:
           host: ${{ secrets.CONTABO_HOST }}
           username: ${{ secrets.CONTABO_USER }}
-          key: ${{ secrets.CONTABO_PASSWORD }}
+          password: ${{ secrets.CONTABO_PASSWORD }}
           port: 22
           script: |
             cd ~julio3542/websampleone.juliobenavente.com/
