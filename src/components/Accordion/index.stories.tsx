@@ -19,7 +19,7 @@ export const Default: Story = {
     return (
       <>
         {items.map((item) => {
-          return <Accordion {...item} />;
+          return <Accordion key={item.id} {...item} />;
         })}
       </>
     );
