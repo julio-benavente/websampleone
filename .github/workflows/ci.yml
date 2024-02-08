@@ -28,6 +28,6 @@ jobs:
             cd ~julio3542/websampleone.juliobenavente.com/
             git pull origin main
             git status
-            npm install --only=prod
+            npm ci
             npm run build
             pm2 reload websampleone
