@@ -6,7 +6,7 @@ import { v4 } from "uuid";
 import teamListData from "./teamListData";
 
 const showhowWhileInViewAnimation = createShowWhileInViewAnimation({
-  viewport: { margin: "-300px" },
+  viewport: { margin: "-100px" },
 });
 export const MotionTeamItem = motion(TeamItem);
 
