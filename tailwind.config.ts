@@ -3,7 +3,6 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 import { urbanist } from "./src/helpers/fonts";
 import cn from "./src/helpers/cn";
-
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -80,7 +79,7 @@ module.exports = {
           DEFAULT: "#ff9c09",
         },
       },
-      width: ({ theme }) => {
+      width: ({ theme }: any) => {
         return {
           xs: theme("maxWidth.xs"),
           sm: theme("maxWidth.sm"),
@@ -96,7 +95,7 @@ module.exports = {
           "8xl": theme("maxWidth.8xl"),
         };
       },
-      height: ({ theme }) => {
+      height: ({ theme }: any) => {
         return {
           xs: theme("maxWidth.xs"),
           sm: theme("maxWidth.sm"),
@@ -112,7 +111,7 @@ module.exports = {
           "8xl": theme("maxWidth.8xl"),
         };
       },
-      minWidth: ({ theme }) => {
+      minWidth: ({ theme }: any) => {
         return {
           xs: theme("maxWidth.xs"),
           sm: theme("maxWidth.sm"),
@@ -128,7 +127,7 @@ module.exports = {
           "8xl": theme("maxWidth.8xl"),
         };
       },
-      minHeight: ({ theme }) => {
+      minHeight: ({ theme }: any) => {
         return {
           xs: theme("maxWidth.xs"),
           sm: theme("maxWidth.sm"),
@@ -148,7 +147,7 @@ module.exports = {
   },
   plugins: [
     "prettier-plugin-tailwindcss",
-    ({ addBase }) => {
+    ({ addBase }: any) => {
       addBase({
         ".link": {
           [`@apply ${cn(

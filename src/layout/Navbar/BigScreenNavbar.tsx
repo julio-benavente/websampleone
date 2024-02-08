@@ -47,7 +47,7 @@ const BigScreenNavbar = () => {
             })}
             <div className="flex gap-x-4">
               <Button
-                linkProps={{ href: "/contact" }}
+                // linkProps={{ href: "/contact" }}
                 onClick={() => {
                   standardScroller("contact");
                 }}

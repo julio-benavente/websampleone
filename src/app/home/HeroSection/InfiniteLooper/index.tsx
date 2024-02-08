@@ -68,7 +68,7 @@ const Squares = () => {
   return Array(4)
     .fill(null)
     .map((e, i) => {
-      const bgColors = {
+      const bgColors: Record<string, string> = {
         "1": "bg-red-300",
         "2": "bg-yellow-300",
         "3": "bg-green-300",
@@ -80,7 +80,7 @@ const Squares = () => {
         "9": "bg-emerald-300",
       };
 
-      const colorSelected = bgColors[String(i + 1)];
+      const colorSelected = bgColors[i + 1];
 
       return (
         <div

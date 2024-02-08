@@ -12,10 +12,10 @@ export const FormProviderDecorator = ({
   children: ReactNode;
 }) => {
   const formMethods = useForm({ mode: "all", ...formProps });
-  const onSubmit = (data) => {
+  const onSubmit = (data: any) => {
     console.log({ message: "Passed", data });
   };
-  const onFail = (error) => {
+  const onFail = (error: any) => {
     console.log({ message: "Failed", data: error });
   };
   return (

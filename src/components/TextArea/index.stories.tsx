@@ -24,7 +24,7 @@ type Story = StoryObj<typeof TextArea>;
 export const Default: Story = {};
 Default.args = {
   name: "text-input",
-  registerOptions: {
-    required: true,
-  },
+  // registerOptions: {
+  //   required: true,
+  // },
 };

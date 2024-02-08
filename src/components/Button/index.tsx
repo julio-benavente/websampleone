@@ -17,7 +17,8 @@ declare module "@mui/material/Button" {
 
 const { palette } = createTheme();
 const { augmentColor } = palette;
-const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
+const createColor = (mainColor: string) =>
+  augmentColor({ color: { main: mainColor } });
 const theme = createTheme({
   palette: {
     appointment: createColor("#F40B27"),
