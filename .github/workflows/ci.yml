@@ -24,11 +24,9 @@ jobs:
           username: ${{ secrets.CONTABO_USER }}
           password: ${{ secrets.CONTABO_PASSWORD }}
           port: 22
-          script: |
-            cd ~julio3542/websampleone.juliobenavente.com/
-            pwd
-            git pull origin main
-            git status
-            npm ci
-            npm run build
-            pm2 reload websampleone
+      - run: cd ~julio3542/websampleone.juliobenavente.com/
+      - run: pwd
+      - run: git pull origin main
+      - run: npm ci
+      - run: npm run build
+      - run: pm2 reload websampleone
