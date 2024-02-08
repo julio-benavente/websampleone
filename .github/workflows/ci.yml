@@ -27,7 +27,6 @@ jobs:
           script: |
             cd ~julio3542/websampleone.juliobenavente.com/
             git pull origin main
-            git status
-            npm ci
+            npm install
             npm run build
             pm2 reload websampleone
