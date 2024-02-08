@@ -40,7 +40,7 @@ const index = () => {
               })}
             </div>
 
-            <p className="text-white mt-4 lg:mt-0">
+            <p className="text-white mt-4 lg:mt-0 opacity-0">
               This website has been created by{" "}
               <a
                 href="https://juliobenavente.com/"

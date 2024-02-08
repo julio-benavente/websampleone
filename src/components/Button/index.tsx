@@ -69,18 +69,24 @@ const BaseButtom = ({
       )}
       classes={{
         root: cn(
-          "font-semibold rounded-md shadow-none text-sm normal-case transition-none"
+          "font-semibold rounded-md shadow-none normal-case transition-none border font-primary"
         ),
         contained: cn(""),
         containedPrimary: cn(
-          "text-text-light bg-primary-700 hover:bg-primary-700/90 focus:ring-4 focus:ring-primary/50"
+          "text-text-light border-primary-700 bg-primary-700 hover:bg-primary-700/90 focus:ring-4 focus:ring-primary/50"
         ),
         containedSecondary: cn(
           "bg-secondary-400 text-text hover:bg-secondary-400/70 active:bg-secondary-400/50 focus:ring-4 focus:ring-input focus:ring-secondary-300 active:ring-0"
         ),
-        sizeSmall: cn("px-3 py-2"),
-        sizeMedium: cn("px-5 py-3"),
-        sizeLarge: cn("px-8 py-3"),
+        outlinedPrimary: cn(
+          "border-primary-600 text-primary-600 active:bg-primary-400/50 focus:ring-4 focus:ring-input focus:ring-primary-300 active:ring-0"
+        ),
+        outlinedSecondary: cn(
+          "border-secondary-500 text-secondary-500 active:bg-secondary-400/50 focus:ring-4 focus:ring-input focus:ring-secondary-300 active:ring-0"
+        ),
+        sizeSmall: cn("px-3 py-2 text-sm"),
+        sizeMedium: cn("px-5 py-3 text-sm"),
+        sizeLarge: cn("px-8 py-4 text-lg"),
         disabled: cn("bg-gray-100 text-text-disabled"),
       }}
       {...props}

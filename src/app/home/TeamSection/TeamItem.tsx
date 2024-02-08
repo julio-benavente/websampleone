@@ -29,8 +29,10 @@ export const TeamItem = forwardRef(
           className="rounded w-full aspect-square object-cover object-top  lg:aspect-[4/3]"
         />
 
-        <Typography className="text-center mt-4">{props.name}</Typography>
-        <Typography variant="body2" className="text-center">
+        <Typography className="text-center mt-4 font-bold">
+          {props.name}
+        </Typography>
+        <Typography variant="body2" className="text-center text-gray-600">
           {props.position}
         </Typography>
 
@@ -43,19 +45,19 @@ export const TeamItem = forwardRef(
 
         <div className="mt-4 grid grid-flow-col auto-cols-auto justify-center gap-2">
           {props.linkedIn && (
-            <Link href={props.linkedIn} className="group">
+            <a href={props.linkedIn} className="group" target="_blank">
               <LinkedInIcon className="text-3xl text-gray-700 group-hover:text-gray-500" />
-            </Link>
+            </a>
           )}
           {props.twitter && (
-            <Link href={props.twitter} className="group">
+            <a href={props.twitter} className="group" target="_blank">
               <TwitterIcon className="text-3xl text-gray-700 group-hover:text-gray-500" />
-            </Link>
+            </a>
           )}
           {props.mail && (
-            <Link href={props.mail} className="group">
+            <a href={props.mail} className="group" target="_blank">
               <EmailIcon className="text-3xl text-gray-700 group-hover:text-gray-500" />
-            </Link>
+            </a>
           )}
         </div>
       </div>

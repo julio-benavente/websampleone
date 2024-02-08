@@ -16,6 +16,7 @@ import cn from "@/helpers/cn";
 import InfiniteLooper from "./InfiniteLooper";
 import { motion, Variants } from "framer-motion";
 import { createShowWithStaggerChildren } from "@/helpers/animations";
+import standardScroller from "@/helpers/standardScroller";
 
 const MotionTypography = motion(Typography);
 
@@ -28,6 +29,7 @@ const headlinesAnimation = createShowWithStaggerChildren({
 const HeroSection = () => {
   return (
     <div
+      id="home"
       className={cn(
         "min-h-screen container mt-16 lg:container",
         "lg:grid lg:grid-cols-2 lg:gap-x-12 lg:items-center lg:py-0"
@@ -56,11 +58,22 @@ const HeroSection = () => {
             systems.
           </MotionTypography>
           <motion.div
-            className="flex gap-x-4"
+            className="flex flex-col gap-4 xs:flex-row"
             variants={headlinesAnimation.variants}
           >
-            <Button>Button One</Button>
-            <Button color="secondary">Button Two</Button>
+            <Button
+              size="large"
+              onClick={() => standardScroller("contact", { duration: 2000 })}
+            >
+              Contact us
+            </Button>
+            <Button
+              size="large"
+              variant="outlined"
+              onClick={() => standardScroller("what-we-do")}
+            >
+              Our services
+            </Button>
           </motion.div>
         </motion.div>
       </div>

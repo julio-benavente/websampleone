@@ -13,6 +13,7 @@ import { Phone } from "@mui/icons-material";
 
 const BigScreenNavbar = () => {
   const activeLink = useHighlightAcitve(links.map((e) => e.path));
+  console.log(activeLink);
 
   return (
     <div

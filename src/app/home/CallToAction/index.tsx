@@ -8,6 +8,7 @@ import ACInstallation from "@/../public/assets/images/maintance-service.jpg";
 import Image from "next/image";
 import cn from "@/helpers/cn";
 import { Variants, motion } from "framer-motion";
+import standardScroller from "@/helpers/standardScroller";
 
 const MotionTypography = motion(Typography);
 
@@ -71,7 +72,13 @@ const CallToAction = () => {
           </MotionTypography>
 
           <motion.div className="mt-8" variants={variants}>
-            <Button size="large" color="secondary">
+            <Button
+              size="large"
+              color="secondary"
+              onClick={() => {
+                standardScroller("contact");
+              }}
+            >
               Get more information
             </Button>
           </motion.div>

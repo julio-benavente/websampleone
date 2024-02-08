@@ -22,15 +22,16 @@ const ContactSection = () => {
         <div className="max-w-xl">
           <Typography variant="h2">Contact us</Typography>
           <Typography className="mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus, tempore.
+            Connect with us! In our Contact Us section, you'll find all the
+            information you need to reach our team. Don't hesitate to get in
+            touch – we're here to assist you with all your HVAC needs!
           </Typography>
 
           <div className="grid gap-y-2 mt-8">
             {[
               {
                 icon: Mail,
-                value: "heelo@mail.com",
+                value: "hello@jriac.com",
               },
               {
                 icon: Phone,

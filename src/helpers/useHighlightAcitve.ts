@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 
 const useHighlightAcitve = (sections: Array<string>) => {
@@ -44,6 +45,8 @@ const useHighlightAcitve = (sections: Array<string>) => {
       window.removeEventListener("scroll", () => checkActiveness(sections));
     };
   }, [sections]);
+
+  console.log(state);
 
   return state;
 };

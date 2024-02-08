@@ -8,7 +8,7 @@ import TeamSection from "./home/TeamSection";
 
 export default function Home() {
   return (
-    <main id="home">
+    <main>
       <HeroSection />
       <ServicesSections />
       <CallToAction />

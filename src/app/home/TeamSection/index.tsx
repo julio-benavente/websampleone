@@ -9,7 +9,7 @@ const showWhileInViewAnimation = createShowWhileInViewAnimation();
 
 const TeamSection = () => {
   return (
-    <section className="bg-secondary-50/50" id="team">
+    <section className="" id="team">
       <div className="container">
         <motion.div className="max-w-lg mx-auto" {...showWhileInViewAnimation}>
           <Typography variant="h2" className="text-center">
@@ -30,11 +30,17 @@ const TeamSection = () => {
             We are hiring
           </Typography>
           <Typography variant="body1" className="mt-2 text-center">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores
-            cupiditate numquam provident blanditiis aspernatur!
+            If you're looking for a dynamic work environment and opportunities
+            for growth, explore our available positions and apply today!
           </Typography>
 
-          <Button className="mt-8 mx-auto">Apply Now</Button>
+          <a
+            href="https://linkedin.com"
+            className="mt-8 mx-auto"
+            target="_blank"
+          >
+            <Button>Apply Now</Button>
+          </a>
         </motion.div>
       </div>
     </section>

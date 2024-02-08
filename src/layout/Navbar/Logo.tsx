@@ -5,7 +5,7 @@ import standardScroller from "@/helpers/standardScroller";
 const Logo = () => {
   return (
     <Typography
-      className="text-md lg:text-xl font-bold cursor-pointer leading-none font-black"
+      className="text-md lg:text-xl font-bold cursor-pointer leading-none font-black text-primary-800"
       tabIndex={1}
       onClick={() => standardScroller("home")}
     >
