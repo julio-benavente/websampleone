@@ -20,13 +20,14 @@ jobs:
       - name: Deploy using ssh
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.PRIVATE_KEY }}
+          host: ${{ secrets.CONTABO_HOST }}
+          username: ${{ secrets.CONTABO_USER }}
+          key: ${{ secrets.CONTABO_PASSWORD }}
           port: 22
           script: |
-            cd ~/home/danielwetan/apps/node1
-            git pull origin master
+            cd ~julio3542/websampleone.juliobenavente.com/
+            git pull origin main
             git status
             npm install --only=prod
+            npm run build
             pm2 restart node1
