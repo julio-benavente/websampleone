@@ -30,4 +30,4 @@ jobs:
             git status
             npm install --only=prod
             npm run build
-            pm2 restart node1
+            pm2 reload websampleone
