@@ -55,7 +55,7 @@ const HeroSection = () => {
             Johnson Refrigeration, Inc. is a family-owned business, founded in
             1977, specializing in the service, design and installation of
             residential, commercial, and industrial heating and air conditioning
-            systems
+            systems.
           </MotionTypography>
           <motion.div
             className="flex flex-col gap-4 xs:flex-row"
