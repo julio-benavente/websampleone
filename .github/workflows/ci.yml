@@ -27,6 +27,6 @@ jobs:
           script: |
             cd ~julio3542/websampleone.juliobenavente.com/
             git pull origin main
-            npm install
+            npm install --lockfile-version 3
             npm run build
             pm2 reload websampleone
