@@ -64,3 +64,5 @@ export const TeamItem = forwardRef(
     );
   }
 );
+
+TeamItem.displayName = "TeamItem";

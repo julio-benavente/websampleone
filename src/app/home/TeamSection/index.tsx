@@ -30,8 +30,9 @@ const TeamSection = () => {
             We are hiring
           </Typography>
           <Typography variant="body1" className="mt-2 text-center">
-            If you're looking for a dynamic work environment and opportunities
-            for growth, explore our available positions and apply today!
+            If you&lsquo;re looking for a dynamic work environment and
+            opportunities for growth, explore our available positions and apply
+            today!
           </Typography>
 
           <a

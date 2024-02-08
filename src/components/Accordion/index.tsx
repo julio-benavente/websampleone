@@ -72,4 +72,6 @@ const AccordionDetails = ({ className, children }: AccordionDetailsProps) => {
   );
 };
 
+Accordion.displayName = "Accordion";
+
 export default Accordion;

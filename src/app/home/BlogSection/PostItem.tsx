@@ -70,3 +70,5 @@ export const PostItem = forwardRef(
     );
   }
 );
+
+PostItem.displayName = "PostItem";

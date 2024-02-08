@@ -23,8 +23,9 @@ const FAQSection = () => {
           </Typography>
           <Typography className="mt-4 text-white">
             Curious about our HVAC services? Look no further than our FAQ
-            section! We've compiled a list of frequently asked questions to
-            provide you with the insights you need to make informed decisions.
+            section! We&lsquo;ve compiled a list of frequently asked questions
+            to provide you with the insights you need to make informed
+            decisions.
           </Typography>
         </motion.div>
 

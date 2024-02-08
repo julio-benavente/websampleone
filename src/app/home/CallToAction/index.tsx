@@ -58,7 +58,8 @@ const CallToAction = () => {
             className="[&]:text-gray-200"
             variants={variants}
           >
-            Don't Sweat It - Reach Out to Us Today for Reliable HVAC Solutions
+            Don&lsquo;t Sweat It - Reach Out to Us Today for Reliable HVAC
+            Solutions
           </MotionTypography>
           <MotionTypography
             variant="body1"
@@ -67,8 +68,8 @@ const CallToAction = () => {
           >
             Beat the heat with ease! Our seasoned HVAC team guarantees
             year-round comfort. From repairs to installations and maintenance,
-            we've got you covered. Say farewell to sweltering summers and chilly
-            winters - contact us now for top-notch HVAC services!
+            we&lsquo;ve got you covered. Say farewell to sweltering summers and
+            chilly winters - contact us now for top-notch HVAC services!
           </MotionTypography>
 
           <motion.div className="mt-8" variants={variants}>
